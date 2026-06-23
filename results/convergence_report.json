@@ -1,0 +1,26 @@
+{
+  "GSE33000": {
+    "NPO_final_fitness": 0.18941,
+    "PSO_final_fitness": 0.202476,
+    "GA_final_fitness": 0.206582,
+    "NPO_improvement_pct": 10.05,
+    "NPO_vs_PSO_improvement": 6.45,
+    "NPO_vs_GA_improvement": 8.31
+  },
+  "GSE132903": {
+    "NPO_final_fitness": 0.148247,
+    "PSO_final_fitness": 0.160184,
+    "GA_final_fitness": 0.164481,
+    "NPO_improvement_pct": 12.76,
+    "NPO_vs_PSO_improvement": 7.45,
+    "NPO_vs_GA_improvement": 9.87
+  },
+  "GSE122063": {
+    "NPO_final_fitness": 0.093108,
+    "PSO_final_fitness": 0.105571,
+    "GA_final_fitness": 0.107993,
+    "NPO_improvement_pct": 14.95,
+    "NPO_vs_PSO_improvement": 11.81,
+    "NPO_vs_GA_improvement": 13.78
+  }
+}

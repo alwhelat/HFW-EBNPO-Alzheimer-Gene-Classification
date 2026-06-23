@@ -1,0 +1,195 @@
+<svg viewBox="0 0 560 1460" xmlns="http://www.w3.org/2000/svg" font-family="Arial, Helvetica, sans-serif">
+  <title>HFW-NPO Algorithm Structure Diagram</title>
+  <desc>Flowchart of the Hybrid Filter-Wrapper Nomadic People Optimizer for Alzheimer's gene expression classification</desc>
+
+  <rect width="560" height="1460" fill="white"/>
+
+  <defs>
+    <marker id="arr" markerWidth="9" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 9 3, 0 6" fill="#1a1a1a"/>
+    </marker>
+  </defs>
+
+  <!-- TITLE BAR -->
+  <rect x="0" y="0" width="560" height="28" fill="#1F3864"/>
+  <text x="280" y="19" text-anchor="middle" font-size="13" font-weight="bold" fill="white">HFW-NPO Algorithm Structure Diagram</text>
+
+  <!-- ===== START oval ===== -->
+  <ellipse cx="280" cy="52" rx="58" ry="18" fill="#1F3864" stroke="#1F3864"/>
+  <text x="280" y="57" text-anchor="middle" font-size="13" font-weight="bold" fill="white">START</text>
+
+  <!-- Arrow START → Box2 -->
+  <line x1="280" y1="70" x2="280" y2="90" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ===== Box 2: Load Dataset ===== top=90, h=46, bottom=136 -->
+  <rect x="175" y="90" width="210" height="46" rx="4" fill="#EBF3FB" stroke="#2E75B6" stroke-width="1.5"/>
+  <text x="280" y="108" text-anchor="middle" font-size="12" font-weight="bold" fill="#1F3864">Load Gene Expression Dataset</text>
+  <text x="280" y="126" text-anchor="middle" font-size="10" fill="#444">GSE33000 · GSE132903 · GSE122063</text>
+
+  <!-- Arrow Box2 → Box3 -->
+  <line x1="280" y1="136" x2="280" y2="154" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ===== Box 3: Pre-process ===== top=154, h=46, bottom=200 -->
+  <rect x="175" y="154" width="210" height="46" rx="4" fill="#EBF3FB" stroke="#2E75B6" stroke-width="1.5"/>
+  <text x="280" y="172" text-anchor="middle" font-size="12" font-weight="bold" fill="#1F3864">Data Pre-processing</text>
+  <text x="280" y="190" text-anchor="middle" font-size="10" fill="#444">Mean imputation · Min-Max normalization</text>
+
+  <!-- Arrow Box3 → Box4 -->
+  <line x1="280" y1="200" x2="280" y2="218" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ===== Box 4: K-Fold ===== top=218, h=46, bottom=264 -->
+  <rect x="175" y="218" width="210" height="46" rx="4" fill="#EBF3FB" stroke="#2E75B6" stroke-width="1.5"/>
+  <text x="280" y="236" text-anchor="middle" font-size="12" font-weight="bold" fill="#1F3864">5-Fold Stratified CV Split</text>
+  <text x="280" y="254" text-anchor="middle" font-size="10" fill="#444">Preserve class distribution per fold</text>
+
+  <!-- Arrow Box4 → Phase1 banner -->
+  <line x1="280" y1="264" x2="280" y2="282" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ===== PHASE 1 BANNER ===== top=282, h=20, bottom=302 -->
+  <rect x="175" y="282" width="210" height="20" rx="3" fill="#2E75B6"/>
+  <text x="280" y="296" text-anchor="middle" font-size="10.5" font-weight="bold" fill="white">PHASE 1 — Hybrid Filter</text>
+
+  <!-- ===== Box 5: Hybrid Filter ===== top=302, h=60, bottom=362 -->
+  <rect x="175" y="302" width="210" height="60" rx="4" fill="#E8F4FD" stroke="#2E75B6" stroke-width="1.5"/>
+  <text x="280" y="318" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#1F3864">Tri-criterion Hybrid Filter</text>
+  <text x="280" y="332" text-anchor="middle" font-size="10" fill="#444">Fisher Ratio · Mutual Info · Welch t-test</text>
+  <text x="280" y="346" text-anchor="middle" font-size="10" fill="#333">&#x3C9; = 0.40·F + 0.30·MI + 0.30·W</text>
+  <text x="280" y="358" text-anchor="middle" font-size="10" fill="#444">Select top-k probes (no data leakage)</text>
+
+  <!-- Arrow Box5 → Phase2 banner -->
+  <line x1="280" y1="362" x2="280" y2="380" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ===== PHASE 2 BANNER ===== top=380, h=20, bottom=400 -->
+  <rect x="175" y="380" width="210" height="20" rx="3" fill="#538135"/>
+  <text x="280" y="394" text-anchor="middle" font-size="10.5" font-weight="bold" fill="white">PHASE 2 — Class Balancing</text>
+
+  <!-- ===== Box 6: SMOTE ===== top=400, h=52, bottom=452 -->
+  <rect x="175" y="400" width="210" height="52" rx="4" fill="#E2EFDA" stroke="#538135" stroke-width="1.5"/>
+  <text x="280" y="416" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#375623">Adaptive Intra-fold SMOTE</text>
+  <text x="280" y="430" text-anchor="middle" font-size="10" fill="#444">Training partition only (no leakage)</text>
+  <text x="280" y="444" text-anchor="middle" font-size="10" fill="#444">k = min(5, minority_count &#x2212; 1)</text>
+
+  <!-- Arrow Box6 → Phase3 banner -->
+  <line x1="280" y1="452" x2="280" y2="470" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ===== PHASE 3 BANNER ===== top=470, h=20, bottom=490 -->
+  <rect x="175" y="470" width="210" height="20" rx="3" fill="#7030A0"/>
+  <text x="280" y="484" text-anchor="middle" font-size="10.5" font-weight="bold" fill="white">PHASE 3 — NPO Wrapper</text>
+
+  <!-- ===== Box 7: Init NPO ===== top=490, h=52, bottom=542 -->
+  <rect x="175" y="490" width="210" height="52" rx="4" fill="#F4E6FF" stroke="#7030A0" stroke-width="1.5"/>
+  <text x="280" y="506" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#4B1173">Initialize NPO Population</text>
+  <text x="280" y="520" text-anchor="middle" font-size="10" fill="#444">75 agents: 5 clans &#xD7; 15 families</text>
+  <text x="280" y="534" text-anchor="middle" font-size="10" fill="#444">Continuous position &#x2192; binary mask</text>
+
+  <!-- Arrow Box7 → Box8 -->
+  <line x1="280" y1="542" x2="280" y2="560" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ===== Box 8: Binarize + Eval ===== top=560, h=66, bottom=626  [NPO LOOP ENTRY] -->
+  <rect x="175" y="560" width="210" height="66" rx="4" fill="#F4E6FF" stroke="#7030A0" stroke-width="2"/>
+  <text x="280" y="577" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#4B1173">Binarize Positions + Evaluate Fitness</text>
+  <text x="280" y="591" text-anchor="middle" font-size="10" fill="#444">Sigmoid-based stochastic binarization</text>
+  <text x="280" y="604" text-anchor="middle" font-size="10" fill="#333">f = 0.85(1&#x2212;BalAcc) + 0.15&#xB7;&#x221A;(|S|/K)</text>
+  <text x="280" y="618" text-anchor="middle" font-size="10" fill="#444">3-fold CV via RidgeClassifier</text>
+
+  <!-- Arrow Box8 → Box9 -->
+  <line x1="280" y1="626" x2="280" y2="644" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ===== Box 9: Update + Lévy ===== top=644, h=52, bottom=696 -->
+  <rect x="175" y="644" width="210" height="52" rx="4" fill="#F4E6FF" stroke="#7030A0" stroke-width="1.5"/>
+  <text x="280" y="660" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#4B1173">Position Update + L&#xe9;vy Flight</text>
+  <text x="280" y="674" text-anchor="middle" font-size="10" fill="#444">Intra-clan and global migration vectors</text>
+  <text x="280" y="688" text-anchor="middle" font-size="10" fill="#444">Scale: 0.01 &#x2192; 0.40 on stagnation</text>
+
+  <!-- Arrow Box9 → Box10 -->
+  <line x1="280" y1="696" x2="280" y2="714" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ===== Box 10: Anti-stag + Migration ===== top=714, h=52, bottom=766 -->
+  <rect x="175" y="714" width="210" height="52" rx="4" fill="#F4E6FF" stroke="#7030A0" stroke-width="1.5"/>
+  <text x="280" y="730" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#4B1173">Anti-stagnation + Inter-clan Migration</text>
+  <text x="280" y="744" text-anchor="middle" font-size="10" fill="#444">Restart worst 20% (stagnation &#x2265; 8)</text>
+  <text x="280" y="758" text-anchor="middle" font-size="10" fill="#444">Inter-clan migration every 5 iters</text>
+
+  <!-- Arrow Box10 → Diamond11 -->
+  <line x1="280" y1="766" x2="280" y2="790" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ===== Diamond 11: Termination ===== center=(280,836) half-w=80, half-h=46 -->
+  <polygon points="280,790 360,836 280,882 200,836" fill="#FFF2CC" stroke="#BF9000" stroke-width="1.5"/>
+  <text x="280" y="831" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#7F5B00">Max iterations</text>
+  <text x="280" y="848" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#7F5B00">reached?</text>
+
+  <!-- NO: left → loop back to Box 8 left edge (175, 593) -->
+  <path d="M200,836 L110,836 L110,593 L175,593" stroke="#1a1a1a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+  <text x="148" y="826" text-anchor="middle" font-size="11" fill="#C00000" font-weight="bold">NO</text>
+
+  <!-- YES: down → Box 12 -->
+  <line x1="280" y1="882" x2="280" y2="908" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="295" y="900" font-size="11" fill="#375623" font-weight="bold">YES</text>
+
+  <!-- ===== Box 12: Hill Climbing ===== top=908, h=52, bottom=960 -->
+  <rect x="175" y="908" width="210" height="52" rx="4" fill="#F4E6FF" stroke="#7030A0" stroke-width="1.5"/>
+  <text x="280" y="924" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#4B1173">Hill Climbing Local Search</text>
+  <text x="280" y="938" text-anchor="middle" font-size="10" fill="#444">50 flip-one-bit iterations per agent</text>
+  <text x="280" y="952" text-anchor="middle" font-size="10" fill="#444">Deterministic binarization</text>
+
+  <!-- Arrow Box12 → Phase4 banner -->
+  <line x1="280" y1="960" x2="280" y2="978" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ===== PHASE 4 BANNER ===== top=978, h=20, bottom=998 -->
+  <rect x="175" y="978" width="210" height="20" rx="3" fill="#C55A11"/>
+  <text x="280" y="992" text-anchor="middle" font-size="10.5" font-weight="bold" fill="white">PHASE 4 — Ensemble Classification</text>
+
+  <!-- ===== Box 13: Ensemble ===== top=998, h=60, bottom=1058 -->
+  <rect x="175" y="998" width="210" height="60" rx="4" fill="#FCE4D6" stroke="#C55A11" stroke-width="1.5"/>
+  <text x="280" y="1014" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#7B2C04">Soft-voting Ensemble Classifier</text>
+  <text x="280" y="1028" text-anchor="middle" font-size="10" fill="#444">Extra Trees (n=300) · SVM-RBF (C=10)</text>
+  <text x="280" y="1041" text-anchor="middle" font-size="10" fill="#444">Logistic Reg. (L2) · RF (n=300)</text>
+  <text x="280" y="1054" text-anchor="middle" font-size="9.5" fill="#555">Gradient Boosting (n=200)</text>
+
+  <!-- Arrow Box13 → Box14 -->
+  <line x1="280" y1="1058" x2="280" y2="1076" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ===== Box 14: Evaluate test fold ===== top=1076, h=46, bottom=1122 -->
+  <rect x="175" y="1076" width="210" height="46" rx="4" fill="#EBF3FB" stroke="#2E75B6" stroke-width="1.5"/>
+  <text x="280" y="1094" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#1F3864">Evaluate on Test Fold</text>
+  <text x="280" y="1112" text-anchor="middle" font-size="10" fill="#444">BalAcc · F1 · Precision · Recall · AUC</text>
+
+  <!-- Arrow Box14 → Diamond15 -->
+  <line x1="280" y1="1122" x2="280" y2="1148" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ===== Diamond 15: All folds done? ===== center=(280,1194) half-w=80, half-h=46 -->
+  <polygon points="280,1148 360,1194 280,1240 200,1194" fill="#FFF2CC" stroke="#BF9000" stroke-width="1.5"/>
+  <text x="280" y="1189" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#7F5B00">All 5 folds</text>
+  <text x="280" y="1206" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#7F5B00">complete?</text>
+
+  <!-- NO: right → loop back to Box 5 right edge (385, 332) -->
+  <path d="M360,1194 L460,1194 L460,332 L385,332" stroke="#1a1a1a" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+  <text x="410" y="1184" text-anchor="middle" font-size="11" fill="#C00000" font-weight="bold">NO</text>
+
+  <!-- YES: down → Box 16 -->
+  <line x1="280" y1="1240" x2="280" y2="1264" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="295" y="1256" font-size="11" fill="#375623" font-weight="bold">YES</text>
+
+  <!-- ===== Box 16: Aggregate ===== top=1264, h=52, bottom=1316 -->
+  <rect x="175" y="1264" width="210" height="52" rx="4" fill="#EBF3FB" stroke="#2E75B6" stroke-width="1.5"/>
+  <text x="280" y="1280" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#1F3864">Aggregate CV Results</text>
+  <text x="280" y="1294" text-anchor="middle" font-size="10" fill="#444">Mean &#xB1; std over 5 folds</text>
+  <text x="280" y="1308" text-anchor="middle" font-size="10" fill="#444">BalAcc · F1 · AUC · Precision · Recall</text>
+
+  <!-- Arrow Box16 → Box17 -->
+  <line x1="280" y1="1316" x2="280" y2="1334" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ===== Box 17: Output ===== top=1334, h=52, bottom=1386 -->
+  <rect x="175" y="1334" width="210" height="52" rx="4" fill="#EBF3FB" stroke="#2E75B6" stroke-width="1.5"/>
+  <text x="280" y="1350" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#1F3864">Output: Biomarker Panel</text>
+  <text x="280" y="1364" text-anchor="middle" font-size="10" fill="#444">Selected gene probe set per dataset</text>
+  <text x="280" y="1378" text-anchor="middle" font-size="10" fill="#444">Classification metrics &amp; report</text>
+
+  <!-- Arrow Box17 → END -->
+  <line x1="280" y1="1386" x2="280" y2="1406" stroke="#1a1a1a" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ===== END oval ===== -->
+  <ellipse cx="280" cy="1424" rx="58" ry="18" fill="#1F3864" stroke="#1F3864"/>
+  <text x="280" y="1429" text-anchor="middle" font-size="13" font-weight="bold" fill="white">END</text>
+
+</svg>

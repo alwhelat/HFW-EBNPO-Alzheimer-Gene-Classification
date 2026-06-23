@@ -1,0 +1,170 @@
+{
+  "GSE33000": {
+    "Full HFW-NPO": {
+      "mean": 85.27649769585253,
+      "std": 4.208856033114852,
+      "delta_from_full": 0.0,
+      "wilcoxon_p": 1.0
+    },
+    "Filter-only": {
+      "mean": 83.70219705974856,
+      "std": 4.767936272899431,
+      "delta_from_full": 1.5743006361039704,
+      "wilcoxon_p": 0.125
+    },
+    "No-Filter (raw)": {
+      "mean": 77.57956407944957,
+      "std": 6.135970464263368,
+      "delta_from_full": 7.6969336164029585,
+      "wilcoxon_p": 0.0625
+    },
+    "No-SMOTE": {
+      "mean": 84.05396561160526,
+      "std": 4.3509618182675,
+      "delta_from_full": 1.2225320842472627,
+      "wilcoxon_p": 0.125
+    },
+    "No-LocalSearch": {
+      "mean": 84.13607379964017,
+      "std": 3.8863561394284973,
+      "delta_from_full": 1.1404238962123543,
+      "wilcoxon_p": 0.125
+    },
+    "Fisher-only": {
+      "mean": 81.9735595286713,
+      "std": 7.345417663040966,
+      "delta_from_full": 3.3029381671812246,
+      "wilcoxon_p": 0.125
+    },
+    "MI-only": {
+      "mean": 81.82341730524291,
+      "std": 6.797307542445927,
+      "delta_from_full": 3.453080390609614,
+      "wilcoxon_p": 0.0625
+    },
+    "Welch-only": {
+      "mean": 80.24947623950246,
+      "std": 3.2685199752870955,
+      "delta_from_full": 5.02702145635007,
+      "wilcoxon_p": 0.0625
+    },
+    "No-Ensemble (SVM)": {
+      "mean": 81.64015605700692,
+      "std": 4.5647706962897745,
+      "delta_from_full": 3.6363416388456073,
+      "wilcoxon_p": 0.0625
+    }
+  },
+  "GSE132903": {
+    "Full HFW-NPO": {
+      "mean": 87.15789473684211,
+      "std": 3.6778610699510534,
+      "delta_from_full": 0.0,
+      "wilcoxon_p": 1.0
+    },
+    "Filter-only": {
+      "mean": 79.8270127243832,
+      "std": 1.8226218570665653,
+      "delta_from_full": 7.330882012458915,
+      "wilcoxon_p": 0.0625
+    },
+    "No-Filter (raw)": {
+      "mean": 76.3918790466011,
+      "std": 6.751541354173254,
+      "delta_from_full": 10.766015690241005,
+      "wilcoxon_p": 0.0625
+    },
+    "No-SMOTE": {
+      "mean": 84.00031230829822,
+      "std": 4.182841614800465,
+      "delta_from_full": 3.15758242854389,
+      "wilcoxon_p": 0.0625
+    },
+    "No-LocalSearch": {
+      "mean": 85.5059617468983,
+      "std": 4.241140906742029,
+      "delta_from_full": 1.6519329899438162,
+      "wilcoxon_p": 0.0625
+    },
+    "Fisher-only": {
+      "mean": 81.864527542209,
+      "std": 4.427162990353015,
+      "delta_from_full": 5.293367194633106,
+      "wilcoxon_p": 0.0625
+    },
+    "MI-only": {
+      "mean": 81.54561973872428,
+      "std": 4.259363489943853,
+      "delta_from_full": 5.612274998117826,
+      "wilcoxon_p": 0.0625
+    },
+    "Welch-only": {
+      "mean": 83.71708992642714,
+      "std": 5.536037012910648,
+      "delta_from_full": 3.440804810414974,
+      "wilcoxon_p": 0.0625
+    },
+    "No-Ensemble (SVM)": {
+      "mean": 80.62398827997157,
+      "std": 2.9032986055952685,
+      "delta_from_full": 6.53390645687054,
+      "wilcoxon_p": 0.0625
+    }
+  },
+  "GSE122063": {
+    "Full HFW-NPO": {
+      "mean": 96.66666666666667,
+      "std": 4.564354645876385,
+      "delta_from_full": 0.0,
+      "wilcoxon_p": 1.0
+    },
+    "Filter-only": {
+      "mean": 88.42001426008632,
+      "std": 5.628619664768154,
+      "delta_from_full": 8.246652406580353,
+      "wilcoxon_p": 0.0625
+    },
+    "No-Filter (raw)": {
+      "mean": 88.88573127558814,
+      "std": 8.629566661066153,
+      "delta_from_full": 7.780935391078529,
+      "wilcoxon_p": 0.125
+    },
+    "No-SMOTE": {
+      "mean": 95.68190805257139,
+      "std": 4.6520893029668535,
+      "delta_from_full": 0.9847586140952842,
+      "wilcoxon_p": 0.25
+    },
+    "No-LocalSearch": {
+      "mean": 95.90067852781212,
+      "std": 4.862728775016288,
+      "delta_from_full": 0.7659881388545529,
+      "wilcoxon_p": 0.4375
+    },
+    "Fisher-only": {
+      "mean": 90.29128713705764,
+      "std": 7.875040481396801,
+      "delta_from_full": 6.3753795296090345,
+      "wilcoxon_p": 0.125
+    },
+    "MI-only": {
+      "mean": 93.50057308723811,
+      "std": 5.591684555264095,
+      "delta_from_full": 3.166093579428562,
+      "wilcoxon_p": 0.375
+    },
+    "Welch-only": {
+      "mean": 93.3086958887466,
+      "std": 7.831501244470586,
+      "delta_from_full": 3.357970777920073,
+      "wilcoxon_p": 0.25
+    },
+    "No-Ensemble (SVM)": {
+      "mean": 92.39669348907587,
+      "std": 4.714249824574243,
+      "delta_from_full": 4.269973177590799,
+      "wilcoxon_p": 0.0625
+    }
+  }
+}
