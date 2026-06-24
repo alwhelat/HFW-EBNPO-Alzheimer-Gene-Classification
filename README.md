@@ -294,7 +294,8 @@ A `CITATION.cff` file is also provided for automated citation tools (Zenodo, Git
 ## Authors
 
 **Almuntadher Alwhelat**  
-Near East University / Al-Farabi University College, Baghdad, Iraq  
+Near East University / Al-Farabi University, Baghdad, Iraq  
+📧 [ 20235107@std.neu.edu.tr](mailto: 20235107@std.neu.edu.tr)
 📧 [almuntadher.mahmood@alfarabiuc.edu.iq](mailto:almuntadher.mahmood@alfarabiuc.edu.iq)  
 🔗 [github.com/alwhelat](https://github.com/alwhelat)
 
